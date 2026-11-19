@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mishra Ji 💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #ffe0ec, #ffc2d8, #fff0f5);
+    color: #7b3152;
+    text-align: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 35px 18px;
+    animation: fadeIn 0.7s ease;
+}
+
+.page.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
+    margin-bottom: 18px;
+    color: #d63384;
+}
+
+h2 {
+    margin-bottom: 18px;
+    color: #c2185b;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 10px auto;
+}
+
+button {
+    border: none;
+    background: #e75480;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 12px 6px;
+    box-shadow: 0 5px 12px #d6338450;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c2185b;
+    transform: scale(1.05);
+}
+
+.card {
+    background: #ffffffbd;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    padding: 25px;
+    width: min(92%, 650px);
+    box-shadow: 0 8px 25px #b8326940;
+    margin: 15px auto;
+}
+
+.photo {
+    width: min(80vw, 280px);
+    height: 280px;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 5px solid white;
+    box-shadow: 0 5px 20px #a52a5a40;
+    margin: 12px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 22px 0;
+}
+
+.time-box {
+    background: white;
+    border-radius: 15px;
+    padding: 13px;
+    min-width: 70px;
+    box-shadow: 0 4px 12px #d6338430;
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d63384;
+}
+
+.time-box small {
+    color: #8c4562;
+}
+
+#lockedMessage {
+    color: #a51d58;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.cake {
+    font-size: 110px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.cake.cut {
+    transform: rotate(-12deg) scale(1.2);
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: floatUp 5s linear forwards;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1: HOME -->
+<section class="page active" id="p1">
+
+    <div class="card">
+        <h1>Hey Mishra Ji! 💗</h1>
+
+        <p>
+            Someone very special is having a birthday soon...
+            And that someone is YOU! 🎀
+        </p>
+
+        <div style="font-size:65px; margin:15px;">
+            🎂 💕 🎁
+        </div>
+
+        <h2>Countdown to Your Special Day</h2>
+
+        <div class="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+        </div>
+
+        <h2>30 November 2026 🎂</h2>
+
+        <p id="lockedMessage">
+            🔒 Your surprise is waiting!
+            Come back on 30 November 💗
+        </p>
+
+        <button onclick="next(2)">
+            Open Your Surprise 💌
+        </button>
+    </div>
+
+    <div class="footer">Made with love 💗</div>
+</section>
+
+
+<!-- PAGE 2: MEMORIES -->
+<section class="page" id="p2">
+
+    <h1>Our Beautiful Memories 📸</h1>
+
+    <div class="card">
+        <p>
+            Some people make ordinary moments special.
+            And you are one of those people! 💕
+        </p>
+
+        <img src="photo1.jpg" class="photo" alt="Memory 1">
+        <img src="photo2.jpg" class="photo" alt="Memory 2">
+        <img src="photo3.jpg" class="photo" alt="Memory 3">
+
+        <p>
+            Every picture has a memory,
+            and every memory is special. 🥹
+        </p>
+    </div>
+
+    <button onclick="next(1)">⬅ Home</button>
+    <button onclick="next(3)">Next Surprise 💗</button>
+</section>
+
+
+<!-- PAGE 3: SPECIAL MESSAGE -->
+<section class="page" id="p3">
+
+    <h1>A Little Message For You 💌</h1>
+
+    <div class="card">
+        <h2>Dear Arpita (Mishra Ji),</h2>
+
+        <p>
+            Happy Birthday in advance! 💗
+        </p>
+
+        <p>
+            I hope your life is always filled with happiness,
+            laughter, success and beautiful memories.
+        </p>
+
+        <p>
+            Thank you for being such a wonderful friend.
+            May all your dreams come true and may you
+            always keep smiling. 🎀
+        </p>
+
+        <p>
+            You deserve all the happiness in the world! 💕
+        </p>
+
+        <h2>Stay Happy, Stay Blessed! 🌸</h2>
+    </div>
+
+    <button onclick="next(2)">⬅ Back</button>
+    <button onclick="next(4)">Next Surprise 🎂</button>
+</section>
+
+
+<!-- PAGE 4: CAKE -->
+<section class="page" id="p4">
+
+    <h1>Time for Cake! 🎂</h1>
+
+    <div class="card">
+        <p>
+            It's your special day!
+            Tap the cake to cut it. 💗
+        </p>
+
+        <div class="cake" id="cake" onclick="cutCake()">
+            🎂
+        </div>
+
+        <h2 id="cakeMessage">
+            Make a wish, Mishra Ji! ✨
+        </h2>
+
+        <p>
+            May your wishes come true! 💕
+        </p>
+    </div>
+
+    <button onclick="next(3)">⬅ Back</button>
+    <button onclick="next(5)">Final Surprise 💝</button>
+</section>
+
+
+<!-- PAGE 5: FINAL -->
+<section class="page" id="p5">
+
+    <h1>Happy Birthday Mishra Ji! 🎉</h1>
+
+    <div class="card">
+        <div style="font-size:75px;">
+            🎂 🎁 💐
+        </div>
+
+        <h2>Happy Birthday, Arpita! 💗</h2>
+
+        <p>
+            May this new year of your life bring
+            endless happiness, good health,
+            success and lots of love.
+        </p>
+
+        <p>
+            Keep smiling and keep shining! ✨
+        </p>
+
+        <h1>Lots of Best Wishes! 💕</h1>
+    </div>
+
+    <button onclick="celebrate()">Celebrate Again 🎊</button>
+    <button onclick="next(1)">Back to Home 🏠</button>
+</section>
+
+
+<script>
+
+// Birthday date: 30 November 2026
+const birthday = new Date("2026-11-30T00:00:00");
+
+// Check whether birthday has arrived
+function isBirthdayUnlocked() {
+    return new Date() >= birthday;
+}
+
+// Page navigation with birthday lock
+function next(n) {
+
+    // Before birthday, only Home page is allowed
+    if (!isBirthdayUnlocked() && n !== 1) {
+        const message = document.getElementById("lockedMessage");
+
+        if (message) {
+            message.textContent =
+                "🔒 Surprise abhi locked hai! 30 November ko aana Mishra Ji! 💗";
+        }
+
+        return;
+    }
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+    document.getElementById("p" + n).classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    if (n === 4 || n === 5) {
+        celebrate();
+    }
+}
+
+
+// Countdown
+function updateCountdown() {
+
+    const now = new Date();
+    const distance = birthday - now;
+
+    if (distance <= 0) {
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        document.getElementById("lockedMessage").textContent =
+            "🎉 Your surprises are unlocked! Happy Birthday! 💗";
+
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+
+// Cake cutting
+let cakeCut = false;
+
+function cutCake() {
+
+    if (cakeCut) return;
+
+    cakeCut = true;
+
+    document.getElementById("cake").classList.add("cut");
+
+    document.getElementById("cakeMessage").textContent =
+        "Yayyy! Happy Birthday Mishra Ji! 🎉💗";
+
+    celebrate();
+}
+
+
+// Floating hearts and celebration
+function celebrate() {
+
+    const emojis = ["💗", "💕", "💖", "✨", "🎉", "🌸"];
+
+    for (let i = 0; i < 25; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (18 + Math.random() * 22) + "px";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+}
+
+</script>
+
+</body>
+</html>
